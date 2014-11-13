@@ -1,15 +1,16 @@
 %define libname %{mklibname KF5FileMetaData 5}
 %define devname %{mklibname KF5FileMetaData -d}
 %define major %(echo %{version} |cut -d. -f1-3)
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.1.0.1
+Version:	5.1.1
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{major}/kfilemetadata-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{major}/kfilemetadata-%{version}.tar.xz
 Source1000:	%{name}.rpmlintrc
 
 BuildRequires:	cmake(ECM)
