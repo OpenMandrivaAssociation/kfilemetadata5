@@ -27,6 +27,7 @@ BuildRequires:	qmobipocket-devel
 BuildRequires:	pkgconfig(poppler-qt5)
 BuildRequires:	cmake(Gettext)
 BuildRequires:	cmake
+BuildRequires:	ninja
 
 Requires: %{libname} = %{EVRD}
 
@@ -39,8 +40,8 @@ File metadata parsing library
 %files
 %{_libdir}/cmake/KF5FileMetaData
 # FIXME may want to split some not so commonly used plugins into subpackages
-%dir %{_libdir}/plugins/kf5/kfilemetadata
-%{_libdir}/plugins/kf5/kfilemetadata/kfilemetadata_*.so
+%dir %{_libdir}/qt5/plugins/kf5/kfilemetadata
+%{_libdir}/qt5/plugins/kf5/kfilemetadata/kfilemetadata_*.so
 
 %package -n %{devname}
 Summary:	Development files for KFileMetaData
@@ -59,11 +60,12 @@ Development files for KFileMetaData
 
 %prep
 %setup -q -n kfilemetadata-%{major}
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
-%cmake
-%make
+ninja -C build
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja install -C build
 
