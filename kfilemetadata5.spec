@@ -2,15 +2,20 @@
 %define devname %{mklibname KF5FileMetaData -d}
 %define major %(echo %{version} |cut -d. -f1-3)
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+%define kdeversion %(echo %{version} |cut -d. -f1).%(expr $(echo %{version} |cut -d. -f2) - 4).%(echo %{version} |cut -d. -f3-)
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.1.2
+Version:	5.5.95
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
+%if "%{stable}" == "stable"
 Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{major}/kfilemetadata-%{version}.tar.xz
+%else
+Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{kdeversion}/kfilemetadata-%{version}.tar.xz
+%endif
 Source1000:	%{name}.rpmlintrc
 
 BuildRequires:	cmake(ECM)
@@ -31,13 +36,13 @@ BuildRequires:	ninja
 
 Requires: %{libname} = %{EVRD}
 
-%libpackage KF5FileMetaData 5
+%dependinglibpackage KF5FileMetaData 5
 %{_libdir}/libKF5FileMetaData.so.2
 
 %description
 File metadata parsing library
 
-%files
+%files -f kfilemetadata.lang
 %{_libdir}/cmake/KF5FileMetaData
 # FIXME may want to split some not so commonly used plugins into subpackages
 %dir %{_libdir}/qt5/plugins/kf5/kfilemetadata
@@ -68,4 +73,4 @@ ninja -C build
 
 %install
 DESTDIR="%{buildroot}" ninja install -C build
-
+%find_lang kfilemetadata
