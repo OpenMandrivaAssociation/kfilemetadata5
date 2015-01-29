@@ -6,13 +6,13 @@
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.5.95
+Version:	5.6.0
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
 %if "%{stable}" == "stable"
-Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{major}/kfilemetadata-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{kdeversion}/kfilemetadata-%{version}.tar.xz
 %else
 Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{kdeversion}/kfilemetadata-%{version}.tar.xz
 %endif
@@ -37,7 +37,7 @@ BuildRequires:	ninja
 Requires: %{libname} = %{EVRD}
 
 %dependinglibpackage KF5FileMetaData 5
-%{_libdir}/libKF5FileMetaData.so.2
+%{_libdir}/libKF5FileMetaData.so.3
 
 %description
 File metadata parsing library
