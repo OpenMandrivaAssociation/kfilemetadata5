@@ -6,7 +6,7 @@
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.6.1
+Version:	5.6.2
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
@@ -19,10 +19,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{kdeversion}/kfilemetadata-
 Source1000:	%{name}.rpmlintrc
 
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(KF5)
-BuildRequires:	cmake(Taglib)
-BuildRequires:	cmake(Exiv2)
 BuildRequires:	cmake(FFmpeg)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5I18n)
@@ -30,6 +27,11 @@ BuildRequires:	cmake(KF5Service)
 BuildRequires:	ebook-tools-devel
 BuildRequires:	qmobipocket-devel
 BuildRequires:	pkgconfig(poppler-qt5)
+BuildRequires:	pkgconfig(exiv2)
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	pkgconfig(Qt5Xml)
+BuildRequires:	pkgconfig(taglib)
 BuildRequires:	cmake(Gettext)
 BuildRequires:	cmake
 BuildRequires:	ninja
@@ -40,7 +42,7 @@ Requires: %{libname} = %{EVRD}
 %{_libdir}/libKF5FileMetaData.so.3
 
 %description
-File metadata parsing library
+File metadata parsing library.
 
 %files -f kfilemetadata.lang
 %{_libdir}/cmake/KF5FileMetaData
@@ -55,7 +57,7 @@ Requires:	%{libname} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
-Development files for KFileMetaData
+Development files for KFileMetaData.
 
 %files -n %{devname}
 %{_includedir}/KF5/KFileMetaData
