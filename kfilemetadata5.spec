@@ -6,7 +6,7 @@
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.6.2
+Version:	5.6.95
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
@@ -33,9 +33,6 @@ BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	cmake(Gettext)
-BuildRequires:	cmake
-BuildRequires:	ninja
-
 Requires: %{libname} = %{EVRD}
 
 %dependinglibpackage KF5FileMetaData 5
@@ -67,12 +64,12 @@ Development files for KFileMetaData.
 
 %prep
 %setup -q -n kfilemetadata-%{major}
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja install -C build
+%ninja_install -C build
+
 %find_lang kfilemetadata
