@@ -33,6 +33,7 @@ BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	cmake(Gettext)
+BuildRequires:	ffmpeg-devel
 Requires: %{libname} = %{EVRD}
 
 %dependinglibpackage KF5FileMetaData 5
