@@ -1,23 +1,15 @@
 %define libname %{mklibname KF5FileMetaData 5}
 %define devname %{mklibname KF5FileMetaData -d}
-%define major %(echo %{version} |cut -d. -f1-3)
-%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-%define kdeversion %(echo %{version} |cut -d. -f1).%(expr $(echo %{version} |cut -d. -f2) - 4).%(echo %{version} |cut -d. -f3-)
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.9.2
-Release:	3
+Version:	5.13.0
+Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
-%if "%{stable}" == "stable"
-Source0:	http://download.kde.org/%{stable}/plasma/%{kdeversion}/kfilemetadata-%{version}.tar.xz
-%else
-Source0:	http://download.kde.org/%{stable}/plasma/%{kdeversion}/kfilemetadata-%{version}.tar.xz
-%endif
+Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/kfilemetadata-%{version}.tar.xz
 Source1000:	%{name}.rpmlintrc
-
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(FFmpeg)
@@ -64,7 +56,7 @@ Development files for KFileMetaData.
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q -n kfilemetadata-%{major}
+%setup -q -n kfilemetadata-%{version}
 %cmake_kde5
 
 %build
