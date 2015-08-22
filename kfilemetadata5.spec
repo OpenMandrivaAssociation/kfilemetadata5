@@ -4,7 +4,7 @@
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
 Version:	5.13.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
@@ -35,7 +35,6 @@ Requires: %{libname} = %{EVRD}
 File metadata parsing library.
 
 %files -f kfilemetadata.lang
-%{_libdir}/cmake/KF5FileMetaData
 # FIXME may want to split some not so commonly used plugins into subpackages
 %dir %{_libdir}/qt5/plugins/kf5/kfilemetadata
 %{_libdir}/qt5/plugins/kf5/kfilemetadata/kfilemetadata_*.so
@@ -45,11 +44,13 @@ Summary:	Development files for KFileMetaData
 Group:		Development/KDE and Qt
 Requires:	%{libname} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
+Conflicts:	%{name} < 5.13.0-2
 
 %description -n %{devname}
 Development files for KFileMetaData.
 
 %files -n %{devname}
+%{_libdir}/cmake/KF5FileMetaData
 %{_includedir}/KF5/KFileMetaData
 %{_libdir}/*.so
 
