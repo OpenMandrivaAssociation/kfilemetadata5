@@ -1,4 +1,3 @@
-removed_sources:
-  kfilemetadata-5.13.0.tar.xz: 29ec6733d6f8e5441bff7b886efcc880696c5137
+---
 sources:
-  kfilemetadata-5.15.0.tar.xz: ee5b8199505fe2d01fcb097d5d1618a45a82b865
+  kfilemetadata-5.16.0.tar.xz: 40bab004ef3bbe21df50a57bd427cb70bde62309
