@@ -12,7 +12,6 @@ Source0:	http://download.kde.org/stable/frameworks/%(echo %{version} |cut -d. -f
 Source1000:	%{name}.rpmlintrc
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5)
-BuildRequires:	cmake(FFmpeg)
 BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5Service)
