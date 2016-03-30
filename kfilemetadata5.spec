@@ -16,7 +16,6 @@ BuildRequires:	cmake(KF5Archive)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5Service)
 BuildRequires:	ebook-tools-devel
-BuildRequires:	qmobipocket-devel
 BuildRequires:	pkgconfig(poppler-qt5)
 BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(Qt5Core)
