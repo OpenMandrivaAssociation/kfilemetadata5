@@ -3,8 +3,8 @@
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.20.0
-Release:	3
+Version:	5.21.0
+Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
