@@ -37,6 +37,7 @@ File metadata parsing library.
 # FIXME may want to split some not so commonly used plugins into subpackages
 %dir %{_libdir}/qt5/plugins/kf5/kfilemetadata
 %{_libdir}/qt5/plugins/kf5/kfilemetadata/kfilemetadata_*.so
+%{_libdir}/qt5/plugins/kf5/kfilemetadata/writers/kfilemetadata_*.so
 
 %package -n %{devname}
 Summary:	Development files for KFileMetaData
