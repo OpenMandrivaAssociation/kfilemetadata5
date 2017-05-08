@@ -4,7 +4,7 @@
 
 Summary:	File metadata parsing library
 Name:		kfilemetadata5
-Version:	5.33.0
+Version:	5.34.0
 Release:	1
 License:	LGPL
 Group:		Graphical desktop/KDE
@@ -34,7 +34,7 @@ Requires: %{libname} = %{EVRD}
 %description
 File metadata parsing library.
 
-%files -f kfilemetadata.lang
+%files -f kfilemetadata5.lang
 # FIXME may want to split some not so commonly used plugins into subpackages
 %dir %{_libdir}/qt5/plugins/kf5/kfilemetadata
 %dir %{_libdir}/qt5/plugins/kf5/kfilemetadata/writers
@@ -68,4 +68,4 @@ Development files for KFileMetaData.
 %install
 %ninja_install -C build
 
-%find_lang kfilemetadata
+%find_lang kfilemetadata5
