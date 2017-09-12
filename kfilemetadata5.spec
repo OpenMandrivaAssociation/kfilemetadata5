@@ -22,6 +22,7 @@ BuildRequires:	pkgconfig(exiv2)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Xml)
+BuildRequires:	pkgconfig(Qt5Multimedia)
 BuildRequires:	pkgconfig(taglib)
 BuildRequires:	cmake(Gettext)
 BuildRequires:	ffmpeg-devel
