@@ -1,3 +1,0 @@
-# Upstream bug -- .so.5.0 symlinked to .so.1
-# preserved for compatibility
-addFilter("E: incoherent-version-in-name")
